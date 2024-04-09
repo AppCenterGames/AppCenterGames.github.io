@@ -1,58 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
         
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
         body {
-            background-color: black;
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            background-color: rgb(24, 4, 18);
             color: white;
             text-align: center;
             font-family: 'Nunito', Nunito, sans-serif;
             overflow-y: hidden;
             overflow-x: hidden;
+
         }
 
-        h1 {
-            font-size: 52px; 
-            margin-top: 5px;
-            color: #be229d;
-        }
-
-        
-        h2 {
-  font-size: 20px; 
-  color: #be229d;
-  position: absolute;
-  bottom: 0;
-           }
-
-           h3 {
-  font-size: 20px; 
-  color: #be229d;
-  position: absolute;
-  bottom: 15px;
-           }
-
-
-
-        p {
-            font-size: 16px;
-        }
-
-        .prevent-select {
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
-}
-
-
-
-
-        .button {
+        .gamebutton {
             display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
+            padding: 30px 20px;
+            margin: 30px;
             font-size: 20px;
             border: none;
             border-radius: 5px;
@@ -64,154 +34,363 @@
             
         }
 
-        .button:active {
-    transform: scale(0.9);
-}
+        .gamebutton:hover{
+            transform: scale(0.9);
+            background-color: #971081;
+        }
+        .gamebutton:active
+        {
+            transform: scale(0.6);
+            background-color: #640c56;
 
-        .button:hover {
-            background-color: #801a6a;
+
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+                background: #000000;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
 
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+        splash {
+            font-style: italic;
+            color: #ff009d;
+        }
+
+        title1 {
+            font-size: 30px;
+            margin-top: 5px;
+            color: #be229d;
+        }
+
+        .prevent-select {
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .page {
+            background-color: rgb(24, 4, 18);
+            color: white;
+            text-align: center;
+            font-family: 'Nunito', Nunito, sans-serif;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -100vw;
+            overflow-y: auto;
+            z-index: 0;
+        }
+
+
+
+
+        .page:target {
+            left: 0vw;
+            z-index: 1;
+        }
+
+        .sidebar {
+            margin: 0;
+            border-radius: 5px;
+            padding: 0;
+            width: 90px;
+            bottom:  300x;
+            background-color: #32143b;
+            overflow: fixed;
+            position: fixed;
+            transform: translateX(-69px);
+            transition: background-color 0.3s ease, transform 0.3s ease; 
+        }
+
+
+.sidebar:hover{
+    transform: translateX(0px);
+
+}
+        .button {
+            display: inline-block;
+            padding: 10px 4px;
+            margin: 3px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            background-color: #50133b00;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+
+        }
+        .button1 {
+            display: inline-block;
+            padding: 10px 4px;
+            margin: 3px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            background-color: #50133b;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+
+        }
+        
+
+        .button1:active {
+            transform: scale(0.9);
+            background-color: #42024e;
+        }
+
+        .button:active {
+            transform: scale(0.9);
+            background-color: #000000;
         }
     </style>
-    <script src="particles.js"></script>
+
+
 </head>
-<body>
-    <div id="particles-js"></div>
 
-    <script>
-        particlesJS('particles-js', {
-            "particles": {
-    "number": {
-      "value": 160,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 1,
-      "random": true,
-      "anim": {
-        "enable": true,
-        "speed": 1,
-        "opacity_min": 0,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 4,
-        "size_min": 0.3,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": false,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 1,
-      "direction": "none",
-      "random": true,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 600
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "bubble"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 1
+<script>
+    window.onload = splashloader;
+
+    const phrases = [
+        "better than noah's site",
+        "jack i hate you",
+        "ngl this is kinda sigma",
+        "lexia powerup hack 2024",
+        "say gex",
+        "2.0 better than 1.0",
+        "90% skidded 10% actual code",
+        "kys shibagt",
+        "\"maybe its because it takes you to where you want to be\"",
+        "rip 3kh0",
+        "i would not want to live here, it looks like the skibidi toilet",
+        "cats better than dogs",
+        "i hate you jackson",
+        "noah l looks like an egg",
+        "america",
+    ];
+
+    const imageUrls = [
+        "unnamed.jpg",
+    ];
+
+    function splashloader() {
+        const randNum = Math.random();
+        if (randNum < 0.99) {
+            const randPhraseNum = Math.floor(Math.random() * phrases.length);
+            document.getElementById("splash").textContent = phrases[randPhraseNum];
+        } else {
+            const randImageNum = Math.floor(Math.random() * imageUrls.length);
+            const splashElement = document.getElementById("splash");
+            splashElement.innerHTML = `<img src="${imageUrls[randImageNum]}" alt="image">`;
         }
-      },
-      "bubble": {
-        "distance": 100,
-        "size": 4,
-        "duration": 2,
-        "opacity": 0,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 100,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
     }
-  },
-  "retina_detect": true
-        });
-        
-    </script>
-    
-    <element class="prevent-select">
-      <h1>AppCenter Games</h1>
-      <h2>made by @boowoomp</h2>
-      <h3>v.1.0</h3>
-      <a class="button" href="games.html">Games</a>
-      <a class="button" href="apps.html">Apps {wip}</a>
-      <a class="button" href="proxies.html">Proxies {wip}</a>
+</script>
 
-      
-      </element>
-      
+<body>
+    <script src="particles.js"></script>
+    
+    <div class="prevent-select">
+        <title1>App Center Games V2.0</title1>
+        
+        <div class="prevent-select">
+            <splash id="splash"></splash>
+            
+            <div class="sidebar">
+                <a class="button" href="#">Home</a>
+                <a class="button" href="#games">Games</a>
+                <a class="button" href="#apps">Apps</a>
+                <a class="button" href="#settings">Settings</a>
+                <a class="button" href="#clowns">Clowns</a>
+            </div>
+            <div id="particles-js"></div>
+
+            <script>
+                particlesJS('particles-js', {
+                    "particles": {
+            "number": {
+              "value": 160,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#ffffff"
+            },
+            "shape": {
+              "type": "circle",
+              "stroke": {
+                "width": 0,
+                "color": "#000000"
+              },
+              "polygon": {
+                "nb_sides": 5
+              },
+              "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+              }
+            },
+            "opacity": {
+              "value": 1,
+              "random": true,
+              "anim": {
+                "enable": true,
+                "speed": 1,
+                "opacity_min": 0,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 3,
+              "random": true,
+              "anim": {
+                "enable": false,
+                "speed": 4,
+                "size_min": 0.3,
+                "sync": false
+              }
+            },
+            "line_linked": {
+              "enable": false,
+              "distance": 150,
+              "color": "#ffffff",
+              "opacity": 0.4,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 1,
+              "direction": "none",
+              "random": true,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+              "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 600
+              }
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": true,
+                "mode": "bubble"
+              },
+              "onclick": {
+                "enable": true,
+                "mode": "push"
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 400,
+                "line_linked": {
+                  "opacity": 1
+                }
+              },
+              "bubble": {
+                "distance": 100,
+                "size": 4,
+                "duration": 2,
+                "opacity": 0,
+                "speed": 3
+              },
+              "repulse": {
+                "distance": 100,
+                "duration": 0.4
+              },
+              "push": {
+                "particles_nb": 4
+              },
+              "remove": {
+                "particles_nb": 2
+              }
+            }
+          },
+          "retina_detect": true
+                });
+                
+            </script>
+
+
+
+            <div class="page" id="games">
+                <title1>App Center Games - Games</title1>
+
+                    <div class="prevent-select">
+                        
+
+                        <div class="sidebar">
+                            <a class="button" href="#">Home</a>
+                            <a class="button" href="#games">Games</a>
+                            <a class="button" href="#apps">Apps</a>
+                            <a class="button" href="#settings">Settings</a>
+                            <a class="button" href="#clowns">Clowns</a>
+
+                        </div>
+                        <a class="gamebutton" href="games/Slope/slope.html">Slope</a>
+                        <a class="gamebutton" href="games/Crossy Road/index.html">Crossy Road</a>
+                        <a class="gamebutton" href="games/Doge Miner/index.html">Doge Miner</a>
+                        <a class="gamebutton" href="games/Doge Miner 2/index.html">Doge Miner 2</a>
+                        <a class="gamebutton" href="games/Cookie Clicker/c.html">Cookie Clicker</a>
+                        <a class="gamebutton">Roblox (W.I.P) </a>
+                        <a class="gamebutton" href="games/Minecraft/mc.html">Minecraft 1.5.2</a>
+                        <a class="gamebutton" href="games/Subway Surfers/index.html">Subway Surfers</a>
+                        <a class="gamebutton" href="games/2048/index.html">2048</a>
+                        <a class="gamebutton" href="games/Classic Minecraft/index.html">Classic Minecraft</a>
+                        <a class="gamebutton" href="games/Minecraft indev/Indev.html">Minecraft Indev</a>
+                        <a class="gamebutton" href="games/Tag/Tag.html">Tag</a>
+
+
+                    
+                </div>
+
+                <div class="page" id="apps">
+                    <div class="prevent-select">
+                        <title1>App Center Games - Apps</title1>
+                        <div class="sidebar">
+                            
+                            <a class="button" href="#">Home</a>
+                            <a class="button" href="#games">Games</a>
+                            <a class="button" href="#apps">Apps</a>
+                            <a class="button" href="#settings">Settings</a>
+                            <a class="button" href="#clowns">Clowns</a>
+                </div>                 
+
+                        
+                        
+                    
+                            <div class="page" id="settings">
+                                <div class="prevent-select">
+                                <title1>App Center Games - Settings</title1>
+                                <div class="button1">Change Theme</div>    
+        
+                        <div class="sidebar">
+                            <a class="button" href="#">Home</a>
+                            <a class="button" href="#games">Games</a>
+                            <a class="button" href="#apps">Apps</a>
+                            <a class="button" href="#settings">Settings</a>
+                            <a class="button" href="#clowns">Clowns</a>
+                      
+                </div>       
 
 </body>
-<head>
-    <title>AppCenterGames</title> 
-</head>
+
 </html>
