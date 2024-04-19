@@ -1,0 +1,67 @@
+<!--
+Game Bootstrapper
+
+@author Kasper Mol <kasper@poki.com>
+@copyright Poki 2017
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<style> 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+  body {
+          background-color: black;
+          color: white;
+          text-align: center;
+          font-family: 'Nunito', Nunito, sans-serif;
+          overflow-x: hidden;
+      }
+			.exitbutton {
+	display: inline-block;
+	padding: 10px 20px;
+	margin: 10px;
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+	text-decoration: none;
+	color: white;
+	background-color: #be229d;
+	transition: background-color 0.3s ease, transform 0.3s ease; 
+	cursor: pointer;
+	position: absolute;
+	z-index: 999;
+	top: 0; 
+	left: 0;
+}
+.exitbutton:hover{
+transform: scale(0.9);
+background-color: #801a6a;
+}
+
+.prevent-select {
+-webkit-user-select: none; 
+-ms-user-select: none; 
+user-select: none; 
+} 
+</style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Crossy Road</title>
+    
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" async href="app-store-interstitial.css" />
+
+    <script src="scripts/extra.min.js"></script>
+    <script src="poki-sdk.js"></script>
+    
+  </head>
+  <body>
+    <element class="prevent-select">
+      <a class="exitbutton" href="#games">X</a>
+    </element class="prevent-select">
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
